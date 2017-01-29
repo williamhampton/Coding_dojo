@@ -1,0 +1,16 @@
+<head>
+  <title>Counter</title>
+  <link rel="stylesheet" type="text/css" href="../static/game.css">
+</head>
+<body>
+  <div id = "box">
+    <h1> Great Number Game</h1>
+    <h3>Pick a number 1-100</h3>
+    <form action = "/results" method = 'post'>
+      Number:  <input type = 'text' name = 'guess'>
+      <input type = "submit" value = 'results'>
+    </form>
+    <a href = '/'>{{reset}}</a>
+    <h2>{{ result }}</h2>
+  </div>
+</body>

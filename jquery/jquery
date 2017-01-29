@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Position Practice</title>
+      <link rel="stylesheet" type="text/css" href="jquery.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <style>
+      .selected {
+        color: blue;
+      }
+      .highlight {
+        background: yellow;
+      }
+      </style>
+      <script type = "text/javascript">
+      $(document).ready(function(){
+        $("#click1").click(function(){
+          alert("this is a test");
+        });
+        $("p").before("<b>Start of paragraph<b>");
+        $( "p" ).append( "<strong>end of paragraph</strong>" );
+        $("p").after("<p>after append<p>");
+      $("#click3").click(function(){
+          alert("This is another test");
+      });
+      $( "#p2" ).addClass( "selected" );
+      $("p:first").html();
+      $( "#s1" ).html()
+      $( "h4" ).click(function() {
+          var htmlString = $( this ).html();
+          $( this ).text( htmlString );
+        });
+        $( "#hideme" ).click(function( event ) {
+          event.preventDefault();
+          $( this ).hide();
+      });
+      $("#hidetoggle").click(function() {
+        $( "p" ).toggle();
+      });
+      $("#showh3").click(function(){
+        $("h3").show();
+      });
+      $( "#slidedown1" ).click(function () {
+          if ( $( "#one" ).is( ":hidden" ) ) {
+            $( "#one" ).slideDown( "slow" );
+          } else {
+            $( "#one" ).slideUp();
+          }
+        });
+        $("#slidetoggle2").click(function(){
+          $("#two").slideToggle("slow");
+        });
+      })</script>
+   </head>
+   <body>
+     <button id = "click1">click1</button>
+     <button id = "click3">click3</button>
+     <button id = "hideme">hideme</button>
+     <button id = "hidetoggle">hidetoggle</button>
+     <button id = "showh3">showh3</button>
+     <button id = "slidedown1">slidedown and up</button>
+     <button id = "slidetoggle2">slidtoggle2</button>
+     <p style="display: none">Good Bye</p>
+     <h3 style= "display:none">This is hidden</h3>
+     <div id ="one" style = "display:none">
+     </div>
+     <div id= "two" style = "display:none">
+     </div>
+     <div id = "three"></div>
+     <p>probent in de chimaeram ad mentemque videretur ob. Soli dum loco sap quae ante olim ima aspi. </p>
+     <div id = "p2">
+       <p>Gi tractare ut ex concilia augeatur produxit mo possumne. Alios ignis velut annos utili jam vis hoc esset. Quasi spero nonne gi ideas horum sexta in. Me pergamque praeterea du theologos ad ob. Veri ei erat aër meis du ante nemo ac an.</p>
+     </div>
+     <div id = "selector"></div>
+     <p></p>
+     <h6></h6>
+     <select id = "s1">
+       <option>axe</option>
+       <option>hammer</option>
+
+     </select>
+     <select id = "s2">
+       <option>str</option>
+       <option>speed</option>
+
+     </select>
+
+    <select id="single">
+      <option>Single</option>
+      <option>Single2</option>
+    </select>
+
+    <select id="multiple" multiple="multiple">
+      <option selected="selected">Multiple</option>
+      <option>Multiple2</option>
+      <option selected="selected">Multiple3</option>
+    </select>
+
+    <script>
+      function displayVals() {
+        var singleValues = $( "#single" ).val();
+        var multipleValues = $( "#multiple" ).val() || [];
+        $( "h6" ).html( "<b>Single:</b> " + singleValues +
+          " <b>Multiple:</b> " + multipleValues.join( ", " ) );
+      }
+
+      $( "select" ).change( displayVals );
+      displayVals();
+  </script>
+  <div class="demo-container">
+    <div class="demo-box">Demonstration Box</div>
+    <ul>
+      <li>list item 1</li>
+      <li>list <strong>item</strong> 2</li>
+    </ul>
+  </div>
+      <p><b>Test</b> Paragraph.</p>
+    <p></p>
+
+    <script>
+    var str = $( "p:first" ).text();
+    $( "p:last" ).html( str );
+    </script>
+    <input id="check1" type="checkbox" checked="checked">
+    <label for="check1">Check me</label>
+    <h5></h5>
+      <script>
+      $( "input" )
+        .change(function() {
+          var $input = $( this );
+          $( "h5" ).html( ".attr( 'checked' ): <b>" + $input.attr( "checked" ) + "</b><br>" +
+            "yes( 'checked' ): <b>" + $input.prop( "checked" ) + "</b><br>" +
+            "no( ':checked' ): <b>" + $input.is( ":checked" ) + "</b>" );
+        })
+        .change();
+      </script>
+    <p><input type = "text"><span>fade out</span><p>
+    <p><input type = "password"><span>fade in</span></p>
+      <script>
+        $( "input[type = text]" ).focus(function() {
+          $( this ).next( "span" ).css( "display", "inline" ).fadeOut( 1000 );
+        });
+        $( "input[type = password]" ).focus(function() {
+          $( this ).next( "span" ).css( "display", "inline" ).fadeOut( 500 );
+        });
+      </script>
+        <div>
+          The values stored were
+          <span></span>
+          and
+          <span></span>
+        </div>
+        <script>
+        $( "div" ).data( "test", { first: 16, last: "pizza!" } );
+        $( "span:first" ).text( $( "div" ).data( "test" ).first );
+        $( "span:last" ).text( $( "div" ).data( "test" ).last );
+        </script>
+
+
+
+
+
+
+
+   </body>
+   </html>

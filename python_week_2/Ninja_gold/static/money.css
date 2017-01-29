@@ -1,0 +1,22 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+.box{
+  display: inline-block;
+  vertical-align: top;
+  height: 300px;
+  width: 300px;
+  background-color: gray;
+  padding-top: 50px;
+}
+.box h2{
+  margin: 50px;
+}
+.box h3{
+  margin: 50px;
+}
+.box form{
+  margin: 50px;
+}

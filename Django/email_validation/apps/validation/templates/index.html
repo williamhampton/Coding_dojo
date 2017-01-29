@@ -1,0 +1,15 @@
+<head>
+  {% load staticfiles %}
+  <link rel = 'stylesheet' href ="{% static 'index_css.css' %}"
+</head>
+<body>
+  <h1>Add your Email Adress!!</h1>
+    {% if failures %}
+      <h4>That was not a valid email adress!!</h4>
+    {% endif %}
+  <form action = '/add' method = 'post'>
+    <input type = 'text'  name = 'test'>
+    {% csrf_token %}
+    <input type = 'submit' value = 'Add an email'>
+  </form>
+</body>

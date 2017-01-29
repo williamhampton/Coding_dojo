@@ -1,0 +1,42 @@
+<head>
+  <title>Ninja Gold</title>
+  <link rel="stylesheet" type="text/css" href="../static/money.css">
+</head>
+<body>
+    <h1>Ninja Gold</h1>
+    <div class = 'box'>
+      <h2>Farm</h2>
+      <h3>Earns 10-20 Gold</h3>
+      <form action = "/process_money" method = 'post'>
+        <input type="hidden" name="action" value="farmmoney">
+        <input type = "submit" value = 'Farm'>
+      </form>
+    </div>
+    <div class = 'box'>
+      <h2>Cave</h2>
+      <h3>Earns 5-10 Gold</h3>
+      <form action = "/process_money" method = 'post'>
+        <input type="hidden" name="action" value="cavemoney">
+        <input type = "submit" value = 'Cave'>
+      </form>
+    </div>
+    <div class = 'box'>
+      <h2>House</h2>
+      <h3>Earns 2-5 Gold</h3>
+      <form action = "/process_money" method = 'post'>
+        <input type="hidden" name="action" value="housemoney">
+        <input type = "submit" value = 'House'>
+      </form>
+    </div>
+    <div class = 'box'>
+      <h2>Casino</h2>
+      <h3>Earns/Takes 0-50 Gold</h3>
+      <form action = "/process_money" method = 'post'>
+        <input type="hidden" name="action" value="casinomoney">
+        <input type = "submit" value = 'Casino'>
+      </form>
+    </div>
+    <h1>Your gold</h1>
+    {{gold}}
+
+</body>

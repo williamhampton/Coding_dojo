@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Disappearing Ninjas</title>
+</head>
+<body>
+  {% load staticfiles %}
+  {% if color == 'blue' %}
+    <img src = "{% static 'leonardo.jpg' %}">
+  {% endif %}
+  {% if color == 'red' %}
+    <img src = "{% static 'raphael.jpg' %}">
+  {% endif %}
+  {% if color == 'orange' %}
+    <img src = "{% static 'michelangelo.jpg' %}">
+  {% endif %}
+  {% if color == 'purple' %}
+    <img src = "{% static 'donatello.jpg' %}">
+  {% endif %}
+  {% if color != 'blue' and color != 'red' and color != 'orange' and color != 'purple' %}
+    <img src = "{% static 'notapril.jpg' %}">
+  {% endif %}
+  {{ color }}
+</body>
+</html>

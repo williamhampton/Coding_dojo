@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>Advanced Validation Example</title>
+  <link rel="stylesheet" type="text/css" href="../static/indexstyle.css">
+</head>
+<body>
+  <form action = '/submit' method = "POST">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+      {% if category == 'first_name' %}
+        <p>{{message}}</p>
+      {% endif%}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    First Name: <input type = 'text' name = 'first_name'>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+      {% if category == 'last_name' %}
+        <p>{{message}}</p>
+      {% endif%}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    Last Name: <input tpye = 'text' name = 'last_name'>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+      {% if category == 'email' %}
+        <p>{{message}}</p>
+      {% endif%}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    Email: <input type = 'text' name = 'email'>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+      {% if category == 'password' %}
+        <p>{{message}}</p>
+      {% endif%}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    Password: <input type = 'password' name = 'password'>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+      {% if category == 'confirm_password' %}
+        <p>{{message}}</p>
+      {% endif%}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    Confirm Password:<input type = 'password' name = 'confirm_password'>
+    {% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+      {% if category == 'match_password' %}
+        <p>{{message}}</p>
+      {% endif%}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <input type = 'submit' value = 'Submit'>
+    {{thankyou}}
+  </form>
+</body>

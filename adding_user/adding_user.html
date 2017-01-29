@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Dissapearing Ninja</title>
+      <link rel="stylesheet" type="text/css" href="adding_user.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script type = "text/javascript">
+      $(document).ready(function(){
+        $("#add_user").submit(function(){
+          event.preventDefault();
+          var newfirstname = $('#add_user').find('input[name = "first_name"]').val();
+          var newlastname = $('#add_user').find('input[name = "last_name"]').val();
+          var newemail = $('#add_user').find('input[name = "email_adress"]').val();
+          var newcontact = $('#add_user').find('input[name = "contact#"]').val();
+          $('table').append('<tr><td>' + newfirstname + '</td><td>'+newlastname+ '</td><td>'+ newemail +'</td><td>'+ newcontact + '</td></tr>')
+        });
+        $("p").click(function(){
+          $("p").append("test");
+        });
+      });
+      </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Adress</th>
+        <th>Contact #</th>
+      </tr>
+    </table>
+    <h1> Add User</h1>
+    <form id = "add_user" method = "post">
+      First Name<input type = "text" name = "first_name">
+      Last Name<input type = "text" name = "last_name">
+      Email Adress<input type = "text" name = "email_adress">
+      Contact #<input type = "text" name = "contact#">
+      <input type = "submit" value = "create new user">
+    </form>
+  </body>

@@ -1,0 +1,29 @@
+<head>
+  {% load staticfiles %}
+  <link rel = 'stylesheet' href = '{% static "index_css.css" %}'>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+{% for product in products %}
+<tr>
+  <th>{{ product.name }}</th>
+  <th>{{ product.description }}</th>
+  <th>{{ product.price }}</th>
+</tr>
+<tr>
+  <th><form action = '/products/edit/{{ product.id }}' method = 'post'>
+    <input type = 'submit' value = 'Edit'>
+    {% csrf_token %}
+  </form></th>
+  <th><form action = '/products' method = 'post'>
+    <input type = 'submit' value = 'Back'>
+    {% csrf_token %}
+  </form></th>
+{% endfor %}
+</table>
+</body>

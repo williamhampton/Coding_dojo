@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load staticfiles %}
+  <link rel=”stylesheet” href='{% static "bootstrap.css" %}' type=”text/css”/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+<body>
+  <h3>Users</h3>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <th>{{ user.first_name }}</th>
+      <th>{{ user.last_name }}</th>
+      <th>{{ user.email }}</th>
+      <th><a href = '/dashboard/delete/{{user.id}}'><button>Delete User</button></a></th>
+    </tr>
+    {% endfor %}
+  </table>
+  <h3>Admins</h3>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+    </tr>
+    {% for admin in admins %}
+    <tr>
+      <th>{{ admin.member.first_name }}</th>
+      <th>{{ admin.member.last_name }}</th>
+      <th>{{ admin.member.email }}</th>
+      <th><a href = '/dashboard/delete/{{admin.id}}'><button>Delete User</button></a></th>
+    </tr>
+    {% endfor %}
+  </table>
+</body>

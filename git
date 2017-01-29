@@ -1,0 +1,20 @@
+cd .. to send back to root
+mkdir test
+cd test
+touch index.html
+touch style.css
+git init
+git commit -m "this is my first comment"
+atom . index.html
+(write code)
+git add .
+git commit -m "update html"
+atom . style.css
+(write code)
+git add style.css
+git commit -m "update css"
+git log
+atom . style.css
+(make changes)
+git add .
+git commit -m "this is the final commit for this assignment"

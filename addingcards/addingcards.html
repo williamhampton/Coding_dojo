@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Dissapearing Ninja</title>
+      <link rel="stylesheet" type="text/css" href="addingcards.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script type = "text/javascript">
+      $(document).ready(function(){
+        $("#add").submit(function(){
+          event.preventDefault();
+          var newfirstname = $('#add').find('input[name = "first_name"]').val();
+          var newlastname = $('#add').find('input[name = "last_name"]').val();
+          var description = $('#add').find('input[name = "description"]').val();
+          $("body").append("<div class = 'card'><h1>"+newfirstname +"  "+ newlastname + "<p>Click for Description<p><p style = 'display: none'>"+description+"</div>")
+        });
+        $(document).on('click' '.card',function(){
+          $("p").toggle();
+          $("h1").toggle();
+        });
+      });
+      </script>
+  </head>
+  <body>
+    <form id = "add" method = "post">
+      First Name<input class = "inputclass" type = "text" name = "first_name">
+      Last Name<input class = "inputclass" type = "text" name = "last_name">
+      Description<input class = "inputclass" type = "text" name = "description">
+      <input id = "submitbutton" type = "submit" value = "Add User">
+    </form>
+    <div class = 'card'>
+      <p>This is the first card</p>
+    </div>
+  </body>

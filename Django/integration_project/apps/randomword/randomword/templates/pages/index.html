@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <title> clock</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+  </script>
+</head>
+<body>
+  <h1>Random Word</h1>
+  <h2>Number of times requested</h2>
+  <h2>{{ request.session.times }}</h2>
+  <p><Script>function makeid(){
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 14; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    $('p').append(text )
+    }
+    makeid()</script></p>
+  <div id = 'random'></div>
+  <a href = '/'>
+    <button id = 'button' type = 'submit'> Generate</button>
+  </a>
+</body>

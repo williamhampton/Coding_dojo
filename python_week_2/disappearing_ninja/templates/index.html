@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Disappearing Ninjas</title>
+  <link rel="stylesheet" type="text/css" href="../static/indexstyle.css">
+</head>
+<body>
+  {% if not picture %}
+  <h1>No Ninjas Here</h1>
+  {% endif %}
+  {% if not main %}
+    <img src = '../static/donatello.jpg'>
+    <img src = '../static/leonardo.jpg'>
+    <img src = '../static/michelangelo.jpg'>
+    <img src = '../static/raphael.jpg'>
+  {% endif %}
+</body>
+</html>

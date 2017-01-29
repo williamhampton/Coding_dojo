@@ -1,0 +1,17 @@
+<head>
+  {% load staticfiles %}
+  <link rel = 'stylesheet' href ="{% static 'sucess_css.css' %}"
+</head>
+<body>
+  <h1>Email Adresses:</h1>
+  {% for value in emails %}
+      <tr>
+        <th>{{ value.email }}</th>
+        <th>{{ value.created_at }}</th>
+        <th><form action = '/remove/{{ value.id }}' method = 'post'>
+          <input type = 'submit' value = 'Remove Email'>
+          {% csrf_token %}
+        </form></th>
+      </tr>
+    {% endfor  value.course %}
+</body>

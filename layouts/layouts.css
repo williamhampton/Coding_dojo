@@ -1,0 +1,25 @@
+li{
+  display: inline-block;
+  background-color: gray;
+  margin: 10px;
+}
+#head{
+  background-color: gray;
+}
+.bar{
+  display:inline-block;
+  vertical-align: top;
+}
+@media only screen and (max-width: 480px) {
+    .bar { width: 100%; }
+    #nav {display: none;}
+}
+/* Medium sized screens */
+@media only screen and (min-width: 481px) {
+    .bar { width: 30%; }
+    .x { width: 100%;}
+
+}
+/* Large sized screens */
+@media only screen and (min-width: 1024px) {
+    .bar { width: 24%; }

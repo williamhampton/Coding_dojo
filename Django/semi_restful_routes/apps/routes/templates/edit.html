@@ -1,0 +1,14 @@
+<head>
+</head>
+<body>
+  <form action = '/products/update/{{ id }}' method = 'post'>
+    <h4> Name</h4>
+    <input type = 'text' name = 'name'>
+    <h4> Description</h4>
+    <input type = 'text' name = 'description'>
+    <h4>Price</h4>
+    <input type = 'text' name = 'price'>
+    {% csrf_token %}
+    <input type = 'submit' value = 'Edit Product'>
+  </form>
+</body>

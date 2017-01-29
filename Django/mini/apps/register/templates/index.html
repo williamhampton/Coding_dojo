@@ -1,0 +1,15 @@
+<head>
+</head>
+<body>
+  <h1>Please Register</h1>
+  <form action = '/register' method = 'post'>
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form.first_name.errors }}
+    {{ form.last_name.ValidationError }}
+    {{ form.email.errors }}
+    {{ form.password.errors }}
+  <input type = 'submit' value = 'Register'>
+  </form>
+</body>

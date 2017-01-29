@@ -1,0 +1,20 @@
+*{
+  margin: 0px;
+  padding:0px;
+  border: 0px;
+}
+.card{
+  height:200px;
+  width: 300px;
+  background-color: gray;
+  margin: 25px;
+  font-size: 18px;
+  text-align: center;
+}
+.card p {
+  font-size: 14px;
+}
+.inputclass{
+  border: solid black 1px;
+  display: block;
+}

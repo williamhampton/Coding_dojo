@@ -1,0 +1,21 @@
+textarea{
+  vertical-align: top;
+}
+input{
+  vertical-align: top;
+}
+h1{
+  color: blue;
+}
+th{
+   width: 150px;
+}
+table{
+  border: 1px solid gray;
+}
+form{
+display:inline;
+}
+tr{
+  display: block;
+}

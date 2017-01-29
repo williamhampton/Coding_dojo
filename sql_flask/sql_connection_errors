@@ -1,0 +1,32 @@
+1. (2003, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+Make sure you have the correct port selected
+
+2. (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Make sure you have the correct password and user name, both
+will throw the same error code.
+
+3. database': korn, # we got db as an argument NameError: global name 'korn' is not defined
+make sure the database name is correct and in the right file.
+
+4. KeyError: 'password'
+make sure all the keys are there, key error will be thrown
+if any of the keys are missing or misspelled, double check all of that.
+
+5. NameError: global name 'root' is not defined
+Not having quotes arount the password, user, or host. Make sure everything except the database is in quotes
+Not having quotes around the port number actually does not affect it.
+
+6. SyntaxError: invalid syntax
+Not having the config surrounding the selection will throw this error, make sure it is there.
+
+7.  (1049, "Unknown database 'db'")
+Having the database in quotes will throw this error. Make sure it is not in quotes.
+
+8. NameError: global name 'config' is not defined
+Make sure you have a config section and that it is properly spelled.  As well as
+all instances of the word.
+
+9. 'user': 'root'
+         ^
+SyntaxError: invalid syntax
+make sure your syntax is correct, in this case i was missing a comma.

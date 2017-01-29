@@ -1,0 +1,36 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  border:0px;
+}
+#box{
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+#box input{
+  display: block;
+  margin: 35px;
+  border: 1px solid black;
+}
+#result{
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
+#result h1{
+  margin:50px;
+}
+#result h2{
+  margin:50px;
+}
+#result h3{
+  margin:50px;
+}
+#result h4{
+  margin:50px;
+}

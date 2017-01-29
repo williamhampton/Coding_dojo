@@ -1,0 +1,23 @@
+<head>
+  <title>Email Validation</title>
+</head>
+<body>
+  {{all_email}}
+  <h1>Email Validation</h1>
+  <form action = '/submit' method = 'post'>
+    <label for 'email'> Email Adress: <input type = 'text' name ='email' id = 'email'></label>
+  </form>
+  {% with messages = get_flashed_messages(with_categories = true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+    {% if category == 'email' %}
+      <p>{{message}}</p>
+    {% endif%}
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  {{thankyou}}
+  {% for email in all_email: %}
+    <p>Email: {{email['email_ad']}}</p>
+  {% endfor %}
+</body>

@@ -1,0 +1,35 @@
+<head>
+  {% load staticfiles %}
+  <link rel = 'stylesheet' href = '{% static "index_css.css" %}'>
+</head>
+<body>
+  <h1>Courses Available</h1>
+  <table>
+    <tr>
+      <th>Course</th>
+      <th>Description</th>
+      <th>Date Added</th>
+    </tr>
+    {% for value in courses %}
+    <tr>
+      <th>{{ value.course }}</th>
+      <th>{{ value.description }}</th>
+      <th>{{ value.created_at }}</th>
+      <th><form action = '/remove/{{ value.id }}' method = 'post'>
+        <input type = 'submit' value = 'Remove Course'>
+        {% csrf_token %}
+      </form></th>
+      <th><form action = '/remove/1' method = 'post'>
+        <input type = 'submit' value = 'Add user to course'>
+        {% csrf_token %}
+      </form></th>
+    </tr>
+    {% endfor  value.course %}
+  </table>
+  <form action = '/add' method = 'post'>
+    <input type = 'text' name = 'course1'>
+    <textarea name = 'description1' rows = '4' columns = '40'></textarea>
+    {% csrf_token %}
+    <input type = 'submit' value = 'Add a Course'>
+  </form>
+</body>

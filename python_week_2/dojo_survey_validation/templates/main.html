@@ -1,0 +1,51 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/my_style_sheet.css">
+</head>
+<body>
+  <div id = 'box'>
+    <form action = "/result" method = 'post'>
+      Name: <input type = 'text' name = 'name'>
+      {% with messages = get_flashed_messages(with_categories = true)%}
+      {% if messages %}
+      {% for category, message in messages %}
+        {% if category == 'name' %}
+          <p>{{message}}</p>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      Dojo Location: <input type = 'text' name = 'location'>
+      {% with messages = get_flashed_messages(with_categories = true)%}
+      {% if messages %}
+      {% for category, message in messages %}
+        {% if category == 'location' %}
+          <p>{{message}}</p>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      Favorite language: <input type = 'text' name = 'language'>
+      {% with messages = get_flashed_messages(with_categories = true)%}
+      {% if messages %}
+      {% for category, message in messages %}
+        {% if category == 'language' %}
+          <p>{{message}}</p>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      Comment: <input type = 'text' name = 'comment'>
+      {% with messages = get_flashed_messages(with_categories = true)%}
+      {% if messages %}
+      {% for category, message in messages %}
+        {% if category == 'comment' %}
+          <p>{{message}}</p>
+        {% endif %}
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <input type = "submit" value = 'results'>
+    </form>
+  </div>
+</html>

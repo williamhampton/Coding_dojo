@@ -1,0 +1,21 @@
+use twitter
+
+SELECT *
+FROM users
+LEFT JOIN tweets
+ON users.id = tweets.user_id
+WHERE users.id = 1;
+
+select concat(first_name, " ", last_name) from users
+
+select length(first_name) as first_length from users
+
+select date_format(created_at, '%W %M %e %Y') from users
+
+select now() as right_now:
+
+select *
+from users
+left join tweets
+on users.id = tweets.user_id
+where users.id = 2;
